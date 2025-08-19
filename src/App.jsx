@@ -17,6 +17,9 @@ function App() {
           <h1 className="name">
             Ifrah Malik
           </h1>
+          <p className="subtitle">
+            <i className="fas fa-graduation-cap contact-icon"></i> TCNJ CS '25
+          </p>
           <p className="title">
             Software Engineering | Full-Stack Development | Accessibility
           </p>
@@ -92,7 +95,7 @@ function App() {
           <div className="tech-category">
             <h3 className="tech-category-title">Languages</h3>
             <ul className="tech-list">
-              {['Java', 'Python', 'Ruby', 'C#', 'C++', 'C', 'JavaScript/TypeScript', 'HTML/CSS', 'SQL', 'R'].map((tech) => (
+              {['Java', 'Python', 'Ruby', 'C#', 'C++', 'C', 'JavaScript', 'TypeScript', 'HTML/CSS', 'SQL', 'R'].map((tech) => (
                 <li key={tech} className="tech-item">
                   {tech}
                 </li>
@@ -103,7 +106,7 @@ function App() {
           <div className="tech-category">
             <h3 className="tech-category-title">Frameworks & Libraries</h3>
             <ul className="tech-list">
-              {['Spring Boot', 'Flask', 'ASP.NET', 'Ruby on Rails', 'React', 'Angular', 'NgRx', 'Redux', 'Pygame', 'PyAudio', 'Vosk'].map((tech) => (
+              {['Spring Boot', '.NET', 'Flask', 'Ruby on Rails', 'React', 'Angular', 'NgRx', 'Pygame', 'PyAudio', 'Vosk'].map((tech) => (
                 <li key={tech} className="tech-item">
                   {tech}
                 </li>
@@ -125,7 +128,7 @@ function App() {
           <div className="tech-category">
             <h3 className="tech-category-title">Databases & APIs</h3>
             <ul className="tech-list">
-              {['PostgreSQL', 'MySQL', 'MongoDB Atlas', 'SQLyog', 'REST API development', 'Swagger'].map((tech) => (
+              {['PostgreSQL', 'MySQL', 'MongoDB Atlas', 'SQLyog', 'REST APIs', 'Swagger', 'JSON'].map((tech) => (
                 <li key={tech} className="tech-item">
                   {tech}
                 </li>
@@ -136,7 +139,7 @@ function App() {
           <div className="tech-category">
             <h3 className="tech-category-title">Tools</h3>
             <ul className="tech-list">
-              {['Git', 'GitHub', 'Bitbucket', 'GitLab', 'Jira', 'Confluence', 'Splunk', 'OpenSearch Dashboard', 'Unix/Linux', 'JSON', 'CLI', 'GitHub Co-Pilot'].map((tech) => (
+              {['Git', 'GitHub', 'Bitbucket', 'GitLab', 'Jira', 'Confluence', 'Splunk', 'OpenSearch Dashboard', 'Unix/Linux', 'CLI', 'GitHub Co-Pilot'].map((tech) => (
                 <li key={tech} className="tech-item">
                   {tech}
                 </li>
