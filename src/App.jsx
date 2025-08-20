@@ -1,5 +1,6 @@
 import './App.css';
 import profilePic from './assets/_DSC1919.jpeg';
+import bgImage from './assets/bgwebpic.avif';
 import React from 'react';
 // Add Font Awesome CSS
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -47,8 +48,9 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
-      {/* Navigation */}
+    <div className="app-background">
+      <div className="container">
+        {/* Navigation */}
       <nav className="nav-bar">
         <ul className="nav-list">
           <li>
@@ -307,6 +309,7 @@ function App() {
         <p className="footer-text" align="center"> © 2025 Created by Ifrah Malik</p>
       </footer>
       
+    </div>
     </div>
     
   );

@@ -8,6 +8,15 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
 }
+.app-background {
+  min-height: 100vh;
+  background-color: #8b5cf6;
+  background-image: url("./assets/bgwebpic.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 .nav-bar {
   position: sticky;
