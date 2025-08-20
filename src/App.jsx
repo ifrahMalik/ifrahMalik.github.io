@@ -21,9 +21,53 @@ function App() {
     return () => clearInterval(interval);
   }, [isHovered]);
 
+  React.useEffect(() => {
+    const handleNavClick = (e) => {
+      const link = e.target;
+      if (link.classList.contains('nav-link')) {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }
+      }
+    };
+
+    document.querySelector('.nav-list').addEventListener('click', handleNavClick);
+    return () => {
+      const navList = document.querySelector('.nav-list');
+      if (navList) {
+        navList.removeEventListener('click', handleNavClick);
+      }
+    };
+  }, []);
+
   return (
     <div className="container">
-      {/* About Me */}
+      {/* Navigation */}
+      <nav className="nav-bar">
+        <ul className="nav-list">
+          <li>
+            <a href="#about" className="nav-link">About Me</a>
+          </li>
+          <li>
+            <a href="#contact" className="nav-link">Contact</a>
+          </li>
+          <li>
+            <a href="#projects" className="nav-link">Projects</a>
+          </li>
+          <li>
+            <a href="#skills" className="nav-link">Tools & Technologies</a>
+          </li>
+          
+        </ul>
+      </nav>
+
+      {/* Profile Section */}
       <section className="section">
         <div className="profile-section">
           <img 
@@ -41,24 +85,25 @@ function App() {
             Software Engineering | Full-Stack Development | Accessibility
           </p>
         </div>
-        </section>
-        {/* About Me & Contact Section */}
-        <section className="section two-column">
-          <div className="about-me">
-            <h2 className="section-title">
-              About Me
-            </h2>
-            <p className="description">
-              I am a recent Computer Science graduate passionate about 
-              technology and creating practical, user-focused software. 
-              With experience in full-stack development and agile collaboration 
-              in production environments, I am curious, quick to learn, and motivated 
-              by projects that deliver real impact. I am eager to apply my skills across 
-              software development, operations, and data-driven initiatives.
-            </p>
-          </div>
-          
-          <div className="contact-container">
+      </section>
+
+      {/* About Me & Contact Section */}
+      <section id="about" className="section two-column">
+        <div className="about-me">
+          <h2 className="section-title">
+            About Me
+          </h2>
+          <p className="description">
+            I am a recent Computer Science graduate passionate about 
+            technology and creating practical, user-focused software. 
+            With experience in full-stack development and agile collaboration 
+            in production environments, I am curious, quick to learn, and motivated 
+            by projects that deliver real impact. I am eager to apply my skills across 
+            software development, operations, and data-driven initiatives.
+          </p>
+        </div>
+        
+        <div id="contact" className="contact-container">
             <h2 className="section-title">
               Contact
             </h2>
@@ -103,7 +148,7 @@ function App() {
           </div>
         </section>
         {/* Projects */}
-      <section className="section">
+      <section id="projects" className="section">
         <h2 className="section-title">
           Projects
         </h2>
@@ -196,7 +241,7 @@ function App() {
       </section>
 
       {/* Tools/Technologies */}
-      <section className="section">
+      <section id="skills" className="section">
         <h2 className="section-title">
           Tools & Technologies
         </h2>
@@ -257,9 +302,13 @@ function App() {
           </div>
         </div>
       </section>
-
+      {/* Footer */}
+      <footer className="footer">
+        <p className="footer-text" align="center"> © 2025 Created by Ifrah Malik</p>
+      </footer>
       
     </div>
+    
   );
 }
 
