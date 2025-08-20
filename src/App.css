@@ -223,8 +223,9 @@ body {
 .projects-list {
   list-style: none;
   padding: 0;
-  display: grid;
-  gap: 1.5rem;
+  position: relative;
+  height: 300px;
+  overflow: hidden;
 }
 
 .project-card {
@@ -232,6 +233,17 @@ body {
   background-color: rgba(139, 92, 246, 0.05);
   border-radius: 12px;
   border: 1px solid rgba(139, 92, 246, 0.1);
+  position: absolute;
+  width: calc(100% - 3rem);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  height: calc(100% - 3rem);
+  overflow-y: auto;
+}
+
+.project-card.active {
+  opacity: 1;
+  z-index: 1;
 }
 
 .project-link {
@@ -246,4 +258,11 @@ body {
 .project-description {
   color: #6b7280;
   font-size: 0.95rem;
+}
+
+.project-note {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 1rem;
+  text-align: center;
 }

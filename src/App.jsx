@@ -1,9 +1,26 @@
 import './App.css';
 import profilePic from './assets/_DSC1919.jpeg';
+import React from 'react';
 // Add Font Awesome CSS
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
+  const [currentProject, setCurrentProject] = React.useState(0);
+  const [isHovered, setIsHovered] = React.useState(false);
+  const projectsRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered && projectsRef.current) {
+        setCurrentProject((prev) => 
+          prev === projectsRef.current.children.length - 1 ? 0 : prev + 1
+        );
+      }
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
   return (
     <div className="container">
       {/* About Me */}
@@ -85,6 +102,98 @@ function App() {
             </ul>
           </div>
         </section>
+        {/* Projects */}
+      <section className="section">
+        <h2 className="section-title">
+          Projects
+        </h2>
+        <ul 
+          className="projects-list" 
+          ref={projectsRef}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <li className={`project-card ${currentProject === 0 ? 'active' : ''}`}>
+            <a 
+              href="https://github.com/ifrahMalik/luna_cycle"
+              className="project-link"
+            >
+              Luna Cycle
+            </a>
+            <span className="project-description">
+              A full-stack period tracking app built on Emergent, 
+              the world’s new agentic platform, with a FastAPI backend, 
+              React frontend, and MongoDB storage to deliver intuitive 
+              cycle insights and unique Islamic prayer guidance on a 
+              scalable, well-tested architecture.
+            </span>
+          </li>
+          <li className={`project-card ${currentProject === 1 ? 'active' : ''}`}>
+            <a 
+              href="https://github.com/ifrahMalik/NextGenHire"
+              className="project-link"
+            > 
+              NextGenHire
+            </a>
+            <a 
+              href="https://devpost.com/software/nextgenhire"
+              className="project-link"
+            > 
+              Devpost: Hackathon Winning Project
+            </a>
+            <span className="project-description">
+              Built a secure AI-driven (Gemini) career platform with Flask, 
+              HTML, and Auth0 to rapidly implement features, debug, and refactor 
+              code. Engineered AI prompts to improve candidate–job matching logic 
+              and streamline backend workflows to latest development standards.
+            </span>
+          </li>
+          <li className={`project-card ${currentProject === 2 ? 'active' : ''}`}>
+            <a 
+              href="https://github.com/ifrahMalik/PACTALK"
+              className="project-link"
+            >
+              PACTALK
+            </a>
+            <span className="project-description">
+              Developed a Python-based PacMan game with voice commands using Pygame and Vosk, 
+              enhancing accessibility for individuals with motor disabilities.
+            </span>
+          </li>
+          <li className={`project-card ${currentProject === 3 ? 'active' : ''}`}>
+            <a className="project-link">
+              Appointment Scheduler for Arm in Arm
+            </a>
+            <span className="project-description">
+              A web-based application to increase efficiency at a local non-profit organization (Arm-in-Arm) by reducing lines to the food pantry. 
+              Followed Agile Software Development techniques, used Ruby on Rails, configured the PSQL database, and worked on the appointment availability algorithm.
+            </span>
+          </li>
+          <li className={`project-card ${currentProject === 4 ? 'active' : ''}`}>
+            <a className="project-link">
+              Open-Source Project: Rails of Justice for Atlantic Center for Capital Representation (ACCR)
+            </a>
+            <span className="project-description">
+              Rails of Justice is a web-based application that assists the staff of ACCR combat racial and economic inequities in the criminal justice system. 
+              My contributions include creating the manual webinar registrant verification functionality and improving the download CSV files feature.
+            </span>
+          </li>
+          <li className={`project-card ${currentProject === 5 ? 'active' : ''}`}>
+            <a 
+              href="https://github.com/ifrahMalik/DatabaseSystemsFinalProject-QueryingTool"
+              className="project-link"
+            >
+              Sustainability Project for Sustainable Jersey Staff
+            </a>
+            <span className="project-description">
+              Developed a database system and user-friendly interface for the Sustainable Jersey staff, integrating multiple datasets on community profiles, vehicle usage (fuel vs. electric), and emissions from fuel-based passenger vehicles. Designed the UI to provide accessible, streamlined querying capabilities, enabling staff to quickly retrieve insights for research and decision-making. This project strengthened my understanding of database management systems (DBMS) and demonstrated the impact of combining structured data with intuitive interfaces to support sustainability initiatives
+            </span>
+          </li>
+        </ul>
+        <p className="project-note">
+          Note: The projects are displayed in a carousel format, changing every 5 seconds. 
+          Hover over the project list to pause the automatic transition. </p>
+      </section>
 
       {/* Tools/Technologies */}
       <section className="section">
@@ -149,90 +258,7 @@ function App() {
         </div>
       </section>
 
-      {/* Projects */}
-      <section className="section">
-        <h2 className="section-title">
-          Projects
-        </h2>
-        <ul className="projects-list">
-          <li className="project-card">
-            <a 
-              href="https://github.com/ifrahMalik/luna_cycle"
-              className="project-link"
-            >
-              Luna Cycle
-            </a>
-            <span className="project-description">
-              A full-stack period tracking app built on Emergent, 
-              the world’s new agentic platform, with a FastAPI backend, 
-              React frontend, and MongoDB storage to deliver intuitive 
-              cycle insights and unique Islamic prayer guidance on a 
-              scalable, well-tested architecture.
-            </span>
-          </li>
-          <li className="project-card">
-            <a 
-              href="https://github.com/ifrahMalik/NextGenHire"
-              className="project-link"
-            > 
-              NextGenHire
-            </a>
-            <a 
-              href="https://devpost.com/software/nextgenhire"
-              className="project-link"
-            > 
-              Devpost: Hackathon Winning Project
-            </a>
-            <span className="project-description">
-              Built a secure AI-driven (Gemini) career platform with Flask, 
-              HTML, and Auth0 to rapidly implement features, debug, and refactor 
-              code. Engineered AI prompts to improve candidate–job matching logic 
-              and streamline backend workflows to latest development standards.
-            </span>
-          </li>
-          <li className="project-card">
-            <a 
-              href="https://github.com/ifrahMalik/PACTALK"
-              className="project-link"
-            >
-              PACTALK
-            </a>
-            <span className="project-description">
-              Developed a Python-based PacMan game with voice commands using Pygame and Vosk, 
-              enhancing accessibility for individuals with motor disabilities.
-            </span>
-          </li>
-          <li className="project-card">
-            <a className="project-link">
-              Appointment Scheduler for Arm in Arm
-            </a>
-            <span className="project-description">
-              A web-based application to increase efficiency at a local non-profit organization (Arm-in-Arm) by reducing lines to the food pantry. 
-              Followed Agile Software Development techniques, used Ruby on Rails, configured the PSQL database, and worked on the appointment availability algorithm.
-            </span>
-          </li>
-          <li className="project-card">
-            <a className="project-link">
-              Open-Source Project: Rails of Justice for Atlantic Center for Capital Representation (ACCR)
-            </a>
-            <span className="project-description">
-              Rails of Justice is a web-based application that assists the staff of ACCR combat racial and economic inequities in the criminal justice system. 
-              My contributions include creating the manual webinar registrant verification functionality and improving the download CSV files feature.
-            </span>
-          </li>
-          <li className="project-card">
-            <a 
-              href="https://github.com/ifrahMalik/DatabaseSystemsFinalProject-QueryingTool"
-              className="project-link"
-            >
-              Sustainability Project for Sustainable Jersey Staff
-            </a>
-            <span className="project-description">
-              Developed a database system and user-friendly interface for the Sustainable Jersey staff, integrating multiple datasets on community profiles, vehicle usage (fuel vs. electric), and emissions from fuel-based passenger vehicles. Designed the UI to provide accessible, streamlined querying capabilities, enabling staff to quickly retrieve insights for research and decision-making. This project strengthened my understanding of database management systems (DBMS) and demonstrated the impact of combining structured data with intuitive interfaces to support sustainability initiatives
-            </span>
-          </li>
-        </ul>
-      </section>
+      
     </div>
   );
 }
