@@ -71,6 +71,7 @@ function App() {
 
       {/* Profile Section */}
       <section className="section">
+        <div className="welcome">Welcome!</div>
         <div className="profile-section">
           <img 
             src={profilePic} 

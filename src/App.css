@@ -357,3 +357,41 @@ html {
   
   text-align: center;
 }
+
+.welcome {
+  font-size: 1.5rem;
+  color: #8b5cf6;
+  background-color: white;
+  border-radius: clamp(8px, 2vw, 16px);
+  text-align: center;
+  font-family:  "Lucida Sans Typewriter", "Lucida Console", monaco;
+  margin-bottom: 1.5rem;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.5rem 1rem;
+}
+
+.welcome::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  color: #8b5cf6;
+  background: white;
+  animation: typing 4s steps(30) infinite,
+             cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+  50% { color: transparent }
+}
+
+@keyframes typing {
+  0% { width: 100% }
+  30% { width: 0 }
+  60% { width: 0 }
+  90% { width: 100% }
+  100% { width: 100% }
+}
+
