@@ -163,7 +163,7 @@ function App() {
               href="https://github.com/ifrahMalik/luna_cycle"
               className="project-link"
             >
-              Luna Cycle
+              🔗 Luna Cycle
             </a>
             <span className="project-description">
               A full-stack period tracking app built on Emergent, 
@@ -178,13 +178,13 @@ function App() {
               href="https://github.com/ifrahMalik/NextGenHire"
               className="project-link"
             > 
-              NextGenHire
+              🔗 NextGenHire
             </a>
             <a 
               href="https://devpost.com/software/nextgenhire"
               className="project-link"
             > 
-              Devpost: Hackathon Winning Project
+              🔗 Devpost: Hackathon Winning Project
             </a>
             <span className="project-description">
               Built a secure AI-driven (Gemini) career platform with Flask, 
@@ -198,7 +198,7 @@ function App() {
               href="https://github.com/ifrahMalik/PACTALK"
               className="project-link"
             >
-              PACTALK
+              🔗 PACTALK
             </a>
             <span className="project-description">
               Developed a Python-based PacMan game with voice commands using Pygame and Vosk, 
@@ -228,7 +228,7 @@ function App() {
               href="https://github.com/ifrahMalik/DatabaseSystemsFinalProject-QueryingTool"
               className="project-link"
             >
-              Sustainability Project for Sustainable Jersey Staff
+              🔗 Sustainability Project for Sustainable Jersey Staff
             </a>
             <span className="project-description">
               Developed a database system and user-friendly interface for the Sustainable Jersey staff, integrating multiple datasets on community profiles, vehicle usage (fuel vs. electric), and emissions from fuel-based passenger vehicles. Designed the UI to provide accessible, streamlined querying capabilities, enabling staff to quickly retrieve insights for research and decision-making. This project strengthened my understanding of database management systems (DBMS) and demonstrated the impact of combining structured data with intuitive interfaces to support sustainability initiatives
@@ -237,7 +237,7 @@ function App() {
         </ul>
         <p className="project-note">
           Note: The projects are displayed in a carousel format, changing every 5 seconds. 
-          Hover over the project list to pause the automatic transition. </p>
+          Hover over the project list to pause the automatic transition. Click the project with a 🔗 to check it out. </p>
       </section>
 
       {/* Tools/Technologies */}
