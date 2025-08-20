@@ -99,7 +99,7 @@ function App() {
             I am a recent Computer Science graduate passionate about 
             technology and creating practical, user-focused software. 
             With experience in full-stack development and agile collaboration 
-            in production environments, I am curious, quick to learn, and motivated 
+            in production environments, I am curious and motivated 
             by projects that deliver real impact. I am eager to apply my skills across 
             software development, operations, and data-driven initiatives.
           </p>
@@ -142,10 +142,7 @@ function App() {
                   LinkedIn
                 </a>
               </li>
-              <li>
-                <i className="fas fa-map-marker-alt contact-icon"></i>
-                <span>NJ, USA</span>
-              </li>
+              
             </ul>
           </div>
         </section>
