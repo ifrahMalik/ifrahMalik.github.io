@@ -162,6 +162,7 @@ function App() {
             <a 
               href="https://github.com/ifrahMalik/luna_cycle"
               className="project-link"
+              target="_blank"
             >
               🔗 Luna Cycle
             </a>
@@ -172,17 +173,19 @@ function App() {
               cycle insights and unique Islamic prayer guidance on a 
               scalable, well-tested architecture.
             </span>
-          </li>
+          </li> 
           <li className={`project-card ${currentProject === 1 ? 'active' : ''}`}>
             <a 
               href="https://github.com/ifrahMalik/NextGenHire"
               className="project-link"
+              target="_blank"
             > 
               🔗 NextGenHire
             </a>
             <a 
               href="https://devpost.com/software/nextgenhire"
               className="project-link"
+              target="_blank"
             > 
               🔗 Devpost: Hackathon Winning Project
             </a>
@@ -197,6 +200,7 @@ function App() {
             <a 
               href="https://github.com/ifrahMalik/PACTALK"
               className="project-link"
+              target="_blank"
             >
               🔗 PACTALK
             </a>
@@ -227,6 +231,7 @@ function App() {
             <a 
               href="https://github.com/ifrahMalik/DatabaseSystemsFinalProject-QueryingTool"
               className="project-link"
+              target="_blank"
             >
               🔗 Sustainability Project for Sustainable Jersey Staff
             </a>
@@ -235,6 +240,35 @@ function App() {
             </span>
           </li>
         </ul>
+        <button 
+          className="carousel-btn prev" 
+          onClick={() => setCurrentProject((prev) => 
+            prev === 0 
+              ? projectsRef.current.children.length - 1 
+              : prev - 1
+          )}
+        >
+          ❮
+        </button>
+        <button 
+          className="carousel-btn next" 
+          onClick={() => setCurrentProject((prev) => 
+            prev === projectsRef.current.children.length - 1 
+              ? 0 
+              : prev + 1
+          )}
+        >
+          ❯
+        </button>
+        <div className="carousel-indicators">
+          {Array.from({ length: projectsRef.current?.children.length || 0 }).map((_, index) => (
+            <span
+              key={index}
+              className={`indicator ${currentProject === index ? 'active' : ''}`}
+              onClick={() => setCurrentProject(index)}
+            />
+          ))}
+        </div>
         <p className="project-note">
           Note: The projects are displayed in a carousel format, changing every 5 seconds. 
           Hover over the project list to pause the automatic transition. Click the project with a 🔗 to check it out. </p>

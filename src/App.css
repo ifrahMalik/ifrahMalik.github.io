@@ -326,6 +326,8 @@ html {
   border: 1px solid rgba(139, 92, 246, 0.1);
   position: absolute;
   width: calc(100% - 3rem);
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   height: calc(100% - 3rem);
@@ -394,4 +396,90 @@ html {
   90% { width: 100% }
   100% { width: 100% }
 }
+
+/* Make the projects section a positioning context */
+#projects {
+  position: relative;
+}
+
+/* Buttons relative to the carousel container */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 5;
+}
+
+/* Position arrows *inside* the carousel nicely */
+.carousel-btn.prev {
+  left: 5px;
+}
+
+.carousel-btn.next {
+  right: 5px;
+}
+
+.carousel-btn:hover {
+  background: #8b5cf6;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 0rem;
+  gap: 0.5rem;
+}
+
+.indicator {
+  width: 5px;
+  height: 5px;
+  background-color: #d1d5db;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #8b5cf6
+ 
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;     
+  border: none;         
+  border-radius: 0;     
+  width: auto;         
+  height: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 2;
+}
+
+
+
 
