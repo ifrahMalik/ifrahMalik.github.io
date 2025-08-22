@@ -95,9 +95,13 @@ function App() {
           <p className="subtitle">
             <i className="fas fa-graduation-cap contact-icon"></i> TCNJ CS '25
           </p>
-          {/* <p className="title">
-            Software Engineering | Full-Stack Development | Accessibility
-          </p> */}
+          <div className="highlights">
+            <span className="highlight-badge">💻 SWE Intern @ Billtrust</span>
+            <span className="highlight-badge">💻 SWE Intern @ Honeywell</span>
+            <p></p>
+            <span className="highlight-badge">🔬 Research in Mobile App Development</span>
+          </div>
+
         </div>
       </section>
 
@@ -158,6 +162,11 @@ function App() {
             </ul>
           </div>
         </section>
+        <section id="experience" className="section">
+          <h2 className="section-title">Experience & Research</h2>
+          
+        </section>
+
         {/* Projects */}
       <section id="projects" className="section">
         <h2 className="section-title">
