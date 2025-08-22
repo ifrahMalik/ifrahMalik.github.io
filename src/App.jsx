@@ -54,6 +54,9 @@ function App() {
       <nav className="nav-bar">
         <ul className="nav-list">
           <li>
+            <a href="#profile" className="nav-link">Home</a>
+          </li>
+          <li>
             <a href="#about" className="nav-link">About Me</a>
           </li>
           <li>
@@ -70,23 +73,31 @@ function App() {
       </nav>
 
       {/* Profile Section */}
-      <section className="section">
-        <div className="welcome">Welcome!</div>
+      <section id="profile" className="section">
+        <div className="welcome">Welcome to my portfolio!</div>
         <div className="profile-section">
+        <div className="profile-bg">
+          
           <img 
             src={profilePic} 
             alt="Your portrait" 
             className="profile-pic"
           />
+          {/* Floating background shapes */}
+          <div className="floating-icon">💻</div>
+          <div className="floating-icon">⚡</div>
+          <div className="floating-icon">🌸</div>
+          <div className="floating-icon">📚</div>
+          </div>
           <h1 className="name">
             Ifrah Malik
           </h1>
           <p className="subtitle">
             <i className="fas fa-graduation-cap contact-icon"></i> TCNJ CS '25
           </p>
-          <p className="title">
+          {/* <p className="title">
             Software Engineering | Full-Stack Development | Accessibility
-          </p>
+          </p> */}
         </div>
       </section>
 
