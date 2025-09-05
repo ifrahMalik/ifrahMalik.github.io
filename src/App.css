@@ -273,68 +273,6 @@ html {
   border-bottom: 1px dashed #8b5cf6;
 }
 
-.tech-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  gap: clamp(1rem, 3vw, 2.5rem);
-  justify-content: center;
-  width: 100%;
-}
-
-.tech-categories > *:last-child:nth-child(2n + 1) {
-  width: 350px;
-}
-
-.tech-category {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
-  padding: 1.25rem;
-  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.08);
-  border: 1px solid rgba(139, 92, 246, 0.1);
-  height: fit-content;
-}
-
-@media (max-width: 768px) {
-  .tech-categories {
-    grid-template-columns: 1fr;
-  }
-}
-
-.tech-category-title {
-  font-size: 1.0rem;
-  font-weight: 600;
-  color: #7c3aed;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid rgba(139, 92, 246, 0.2);
-  margin: 0 0 0.75rem 0;
-}
-
-.tech-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-}
-
-.tech-item {
-  padding: 0.5rem 1rem;
-  background: rgba(139, 92, 246, 0.1);
-  border-radius: 15px;
-  color: #4b5563;
-  font-size: 0.85rem;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
-  line-height: 1.2;
-}
-
-.tech-item:hover {
-  background: rgba(139, 92, 246, 0.15);
-  border-color: rgba(139, 92, 246, 0.2);
-  transform: translateY(-1px);
-}
-
 .projects-list {
   list-style: none;
   padding: 0;
@@ -513,6 +451,266 @@ html {
   transition: background 0.2s ease;
   z-index: 2;
 }
+
+.highlight-badge {
+  display: inline-block;
+  margin: 0.3rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #4b5563;
+  background: white;
+  border-radius: 50px; /* pill shape */
+  border: 1px solid #8b5cf6; /* circular tab look */
+  /* box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15); outer ring effect */
+  transition: all 0.3s ease;
+}
+
+.highlight-badge:hover {
+  background: #8b5cf6;
+  color: white;
+  box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.25);
+  transform: scale(1.05);
+}
+
+.honeywell-logo {
+  margin-top: 20px;
+  width: 350px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.billtrust-logo {
+  margin-top: 20px;
+  width: 350px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Horizontal timeline container */
+.experience-timeline-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin: 2rem auto;
+  padding: 2rem 0;
+  border-top: 3px solid #8b5cf6; /* main horizontal line */
+  max-width: 1000px;
+  overflow-x: auto; /* scrollable on small screens */
+}
+
+/* Each timeline item */
+.experience-item {
+  position: relative;
+  text-align: center;
+  flex: 1;
+}
+
+/* Logo circle markers */
+.experience-logo {
+  position: relative;
+  top: -40px; /* sits on the timeline line */
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #8b5cf6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(139,92,246,0.4);
+}
+
+/* Logos inside */
+.company-logo {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+/* Hidden details below */
+.experience-details {
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+}
+
+/* Show details on hover */
+.experience-item:hover .experience-details {
+  opacity: 1;
+  max-height: 300px;
+  transform: translateY(0);
+}
+
+/* Title inside details */
+.experience-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile responsiveness: stack vertically */
+@media (max-width: 768px) {
+  .experience-timeline-horizontal {
+    flex-direction: column;
+    border-top: none;
+    border-left: 3px solid #8b5cf6;
+    padding-left: 2rem;
+  }
+  .experience-item {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  .experience-logo {
+    top: 0;
+    left: -50px;
+    margin: 0;
+  }
+  .experience-details {
+    margin-left: 80px;
+  }
+}
+
+.tech-tabs-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tech-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px rgba(139, 92, 246, 0.1);
+  /* padding-bottom: 1rem; */
+}
+
+.tech-tab {
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 50px;
+  color: #6b7280;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* border-bottom: none; */
+  position: relative;
+}
+
+.tech-tab:hover {
+  background: rgba(139, 92, 246, 0.1);
+  color: #7c3aed;
+  transform: translateY(-2px);
+}
+
+.tech-tab.active {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  border-color: #8b5cf6;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+@media (max-width: 768px) {
+  .tech-tabs {
+    gap: 0.25rem;
+  }
+  
+  .tech-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.tech-content {
+  position: relative;
+  min-height: 300px;
+}
+
+.tech-category {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.tech-category.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+.tech-category-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #7c3aed;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(139, 92, 246, 0.2);
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.tech-item {
+  padding: 0.6rem 1.2rem;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 20px;
+  color: #4b5563;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  line-height: 1.2;
+}
+
+.tech-item:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+  color: #7c3aed;
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.2);
+}
+
+
+
 
 
 
