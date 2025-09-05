@@ -1,5 +1,5 @@
 import './App.css';
-import profilePic from './assets/_DSC1919-BO84RIz9.jpeg';
+import profilePic from './assets/_DSC1919.jpeg';
 import billtrustlogo from './assets/billtrust-logo.png';
 import tcnjlogo from './assets/tcnj-logo.png';
 import honeywelllogo from './assets/Honeywell_logo.svg.png';
